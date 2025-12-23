@@ -17,11 +17,11 @@ export default function Navbar() {
 	if (!mounted) return null;
 
 	return (
-		<nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
-			<div className="container flex h-16 items-center justify-between">
+		<nav className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 mx-auto">
+			<div className=" container mx-auto flex h-16 items-center justify-between">
 				{/* Logo / Nom */}
 				<div className="font-bold text-xl tracking-tighter hover:text-primary transition-colors cursor-pointer">
-					&lt;DevSec /&gt;
+					&lt;Zwarmex /&gt;
 				</div>
 
 				{/* Desktop Menu */}

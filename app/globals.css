@@ -1,123 +1,112 @@
 @import "tailwindcss";
 
-/* CONFIGURATION TAILWIND V4 
-  On définit les variables de thème ici pour qu'elles soient accessibles comme des classes (ex: bg-primary)
-*/
 @theme {
-	/* On force le dark mode à s'activer via la classe ".dark" (pour next-themes) */
 	--animate-duration: 0.3s;
 
-	/* Couleurs mappées sur nos variables CSS */
 	--color-border: hsl(var(--border));
 	--color-input: hsl(var(--input));
 	--color-ring: hsl(var(--ring));
 	--color-background: hsl(var(--background));
 	--color-foreground: hsl(var(--foreground));
-
 	--color-primary: hsl(var(--primary));
 	--color-primary-foreground: hsl(var(--primary-foreground));
-
 	--color-secondary: hsl(var(--secondary));
 	--color-secondary-foreground: hsl(var(--secondary-foreground));
-
-	--color-destructive: hsl(var(--destructive));
-	--color-destructive-foreground: hsl(var(--destructive-foreground));
-
 	--color-muted: hsl(var(--muted));
 	--color-muted-foreground: hsl(var(--muted-foreground));
-
 	--color-accent: hsl(var(--accent));
 	--color-accent-foreground: hsl(var(--accent-foreground));
-
-	--color-popover: hsl(var(--popover));
-	--color-popover-foreground: hsl(var(--popover-foreground));
-
 	--color-card: hsl(var(--card));
 	--color-card-foreground: hsl(var(--card-foreground));
-
 	--radius: 0.5rem;
+
+	/* Ajout d'une animation custom pour le background */
+	@keyframes gradient-xy {
+		0%,
+		100% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+	}
+	--animate-gradient-xy: gradient-xy 6s ease infinite;
 }
 
-/* DÉFINITION DES COULEURS (Variables CSS)
-  Les valeurs sont en HSL sans 'hsl()' pour permettre l'opacité dans Tailwind
-*/
 :root {
-	/* LIGHT MODE - Clean & Corporate */
-	--background: 0 0% 100%;
+	/* LIGHT MODE - Clean & Tech */
+	--background: 210 40% 98%;
 	--foreground: 222 47% 11%;
-
 	--card: 0 0% 100%;
 	--card-foreground: 222 47% 11%;
-
-	--popover: 0 0% 100%;
-	--popover-foreground: 222 47% 11%;
-
-	--primary: 221 83% 53%; /* Bleu roi */
+	--primary: 250 80% 55%; /* Violet électrique moderne */
 	--primary-foreground: 210 40% 98%;
-
 	--secondary: 210 40% 96.1%;
 	--secondary-foreground: 222 47% 11%;
-
-	--muted: 210 40% 96.1%;
-	--muted-foreground: 215.4 16.3% 46.9%;
-
-	--accent: 210 40% 96.1%;
+	--muted: 210 40% 90%;
+	--muted-foreground: 215 16% 47%;
+	--accent: 250 80% 96%;
 	--accent-foreground: 222 47% 11%;
-
-	--destructive: 0 84.2% 60.2%;
-	--destructive-foreground: 210 40% 98%;
-
-	--border: 214.3 31.8% 91.4%;
-	--input: 214.3 31.8% 91.4%;
-	--ring: 221 83% 53%;
+	--border: 214 32% 91%;
+	--input: 214 32% 91%;
+	--ring: 250 80% 55%;
 }
 
-/* DARK MODE - Cyber & Terminal */
 .dark {
-	--background: 222 47% 11%; /* Bleu nuit profond */
+	/* DARK MODE - Deep Space Cyber */
+	--background: 230 35% 7%; /* Bleu-Nuit très profond (presque noir) */
 	--foreground: 210 40% 98%;
 
-	--card: 222 47% 11%;
+	--card: 230 35% 10%; /* Légèrement plus clair que le fond */
 	--card-foreground: 210 40% 98%;
 
-	--popover: 222 47% 11%;
-	--popover-foreground: 210 40% 98%;
+	--primary: 265 89% 66%; /* Neon Violet/Purple */
+	--primary-foreground: 210 40% 98%;
 
-	--primary: 142 76% 36%; /* Vert Hacker / Matrix */
-	--primary-foreground: 355.7 100% 97.3%;
-
-	--secondary: 217.2 32.6% 17.5%;
+	--secondary: 217 33% 17%;
 	--secondary-foreground: 210 40% 98%;
 
-	--muted: 217.2 32.6% 17.5%;
-	--muted-foreground: 215 20.2% 65.1%;
+	--muted: 217 33% 17%;
+	--muted-foreground: 215 20% 65%;
 
-	--accent: 217.2 32.6% 17.5%;
+	--accent: 265 89% 66%; /* On utilise le primaire en accent pour les hover */
 	--accent-foreground: 210 40% 98%;
 
-	--destructive: 0 62.8% 30.6%;
-	--destructive-foreground: 210 40% 98%;
-
-	--border: 217.2 32.6% 17.5%;
-	--input: 217.2 32.6% 17.5%;
-	--ring: 142 70% 50%;
+	--border: 217 33% 20%;
+	--input: 217 33% 20%;
+	--ring: 265 89% 66%;
 }
 
-/* Custom Variant pour le Dark Mode "class strategy" 
-  Cela dit à Tailwind v4 : "Si la classe .dark est présente sur le parent, active le mode sombre"
-*/
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
-	*,
-	::after,
-	::before,
-	::backdrop,
-	::file-selector-button {
-		border-color: var(--color-border, currentColor);
-	}
-
 	body {
-		@apply bg-background text-foreground transition-colors duration-300;
+		@apply bg-background text-foreground selection:bg-primary/30 selection:text-primary-foreground;
+	}
+}
+
+/* Utilitaires pour le Grid Background (Effet Pro) */
+@layer utilities {
+	.bg-grid-white {
+		background-size: 40px 40px;
+		background-image: linear-gradient(
+				to right,
+				rgba(255, 255, 255, 0.05) 1px,
+				transparent 1px
+			),
+			linear-gradient(
+				to bottom,
+				rgba(255, 255, 255, 0.05) 1px,
+				transparent 1px
+			);
+	}
+	.bg-grid-black {
+		background-size: 40px 40px;
+		background-image: linear-gradient(
+				to right,
+				rgba(0, 0, 0, 0.05) 1px,
+				transparent 1px
+			),
+			linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
 	}
 }

@@ -22,25 +22,27 @@ export const translations: Record<string, TranslationValue> = {
 		experience: "Experience",
 		contact: "Contact",
 
-		// Hero
-		greeting: "Hello, I'm",
-		role: "Full Stack Developer",
+		// Hero (NEW)
+		function: "Full Stack Dev & Cybersecurity",
+		heroTitleLine1: "Engineering",
+		heroTitleHighlight: "Secure & Scalable",
+		heroTitleLine2: "Web Experiences",
 		heroDesc:
-			"Passionate about creating responsive web applications with modern technologies. I focus on building clean, efficient, and secure solutions.",
-		downloadResume: "Download Resume",
-		contactMe: "Contact Me",
+			"I am Julien Pollart. A Full Stack Developer who codes with a security-first mindset. I build modern applications that are as robust as they are beautiful.",
+		startProject: "Start a Project",
+		downloadCv: "Download CV",
+		powering: "Powering products with",
 
 		// About
 		aboutTitle: "About Me",
 		aboutSubtitle: "Bridging the gap between code and security",
 		aboutParagraph1:
 			"I'm a passionate Full Stack Developer with a strong focus on web technologies and a growing expertise in cybersecurity. With a background in both front-end and back-end development, I strive to create seamless, user-friendly applications that solve real-world problems.",
+		yearsLearning: "Years Learning",
+		projectsBuilt: "Projects Built",
 
 		// Skills
 		skillsTitle: "Technical Arsenal",
-		skillsSubtitle: "Tools and technologies I use to build and break",
-		categoryDev: "Development",
-		categorySec: "Cybersecurity",
 
 		// Projects
 		projectsTitle: "Featured Projects",
@@ -48,7 +50,7 @@ export const translations: Record<string, TranslationValue> = {
 		viewProject: "View Project",
 		viewCode: "View Code",
 
-		// Project Specifics (Examples based on your history)
+		// Project Descriptions
 		picoTitle: "PicoCTF 2023",
 		picoDesc:
 			"Cybersecurity competition focusing on cryptography, web exploitation, and forensics.",
@@ -61,7 +63,9 @@ export const translations: Record<string, TranslationValue> = {
 		// Experience
 		expTitle: "My Journey",
 		expSubtitle: "Professional experience and education",
-		present: "Present",
+
+		// Certifications
+		certsTitle: "Certifications & Achievements",
 
 		// Contact
 		contactTitle: "Get In Touch",
@@ -80,26 +84,27 @@ export const translations: Record<string, TranslationValue> = {
 		experience: "Parcours",
 		contact: "Contact",
 
-		// Hero
-		greeting: "Bonjour, je suis",
-		role: "Développeur Full Stack",
+		// Hero (NEW)
+		function: "Développeur Full Stack & Cybersécurité",
+		heroTitleLine1: "Ingénierie Web",
+		heroTitleHighlight: "Sécurisée & Évolutive",
+		heroTitleLine2: "", // Laisser vide si non nécessaire en FR ou adapter
 		heroDesc:
-			"Passionné par la création d'applications web responsives avec des technologies modernes. Je me concentre sur des solutions propres, efficaces et sécurisées.",
-		downloadResume: "Télécharger CV",
-		contactMe: "Me Contacter",
+			"Je suis Julien Pollart. Développeur Full Stack avec une approche 'Security-First'. Je conçois des applications modernes aussi robustes qu'élégantes.",
+		startProject: "Lancer un Projet",
+		downloadCv: "Télécharger CV",
+		powering: "Propulsé par",
 
 		// About
 		aboutTitle: "À propos de moi",
 		aboutSubtitle: "Le pont entre le code et la sécurité",
 		aboutParagraph1:
 			"Je suis un développeur Full Stack passionné avec un fort accent sur les technologies web et une expertise croissante en cybersécurité. Avec une expérience front-end et back-end, je m'efforce de créer des applications fluides qui résolvent des problèmes réels.",
+		yearsLearning: "Années d'apprentissage",
+		projectsBuilt: "Projets réalisés",
 
 		// Skills
 		skillsTitle: "Arsenal Technique",
-		skillsSubtitle:
-			"Outils et technologies que j'utilise pour bâtir et sécuriser",
-		categoryDev: "Développement",
-		categorySec: "Cybersécurité",
 
 		// Projects
 		projectsTitle: "Projets Récents",
@@ -107,7 +112,7 @@ export const translations: Record<string, TranslationValue> = {
 		viewProject: "Voir le Projet",
 		viewCode: "Voir le Code",
 
-		// Project Specifics
+		// Project Descriptions
 		picoTitle: "PicoCTF 2023",
 		picoDesc:
 			"Compétition de cybersécurité axée sur la cryptographie, l'exploitation web et l'investigation.",
@@ -121,7 +126,9 @@ export const translations: Record<string, TranslationValue> = {
 		// Experience
 		expTitle: "Mon Parcours",
 		expSubtitle: "Expérience professionnelle et formation",
-		present: "Aujourd'hui",
+
+		// Certifications
+		certsTitle: "Certifications & Réalisations",
 
 		// Contact
 		contactTitle: "Me Contacter",
